@@ -16,10 +16,7 @@ const router = createHashRouter(
         },
       ],
     },
-  ],
-  {
-    basename: '/Pr-architech',
-  }
+  ]
 )
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
