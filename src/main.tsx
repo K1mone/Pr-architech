@@ -4,18 +4,23 @@ import './index.css'
 import App from './App'
 import Home from './Pages/Home'
 
-const router = createHashRouter([
+const router = createHashRouter(
+  [
+    {
+      path: '/',
+      element: <App />,
+      children: [
+        {
+          index: true,
+          element: <Home />,
+        },
+      ],
+    },
+  ],
   {
-    path: '/',
-    element: <App />,
-    children: [
-      {
-        index: true,
-        element: <Home />,
-      },
-    ],
-  },
-])
+    basename: '/Pr-architech',
+  }
+)
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <RouterProvider router={router} />
