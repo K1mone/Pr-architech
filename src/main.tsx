@@ -6,19 +6,17 @@ import Home from './Pages/Home'
 
 const router = createHashRouter([
   {
-    path: "/", 
+    path: '/',
     element: <App />,
     children: [
       {
         index: true,
-        element: <Home />
-      }
-    ]
-  }
-]);
+        element: <Home />,
+      },
+    ],
+  },
+])
 
-const root = document.getElementById("root")!
-
-ReactDOM.createRoot(root).render(
+ReactDOM.createRoot(document.getElementById('root')!).render(
   <RouterProvider router={router} />
-);
+)
