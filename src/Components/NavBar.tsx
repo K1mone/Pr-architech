@@ -3,7 +3,7 @@ import { Menu, X, ChevronDown } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext'
 
 const languages = [
-  { code: 'en', label: 'English', flag: `${import.meta.env.BASE_URL}flags/gb.png` },
+  { code: 'en', label: 'English', flag: `${import.meta.env.BASE_URL}flags/en.png` },
   { code: 'ru', label: 'Русский', flag: `${import.meta.env.BASE_URL}flags/ru.png` },
   { code: 'zh', label: '中文', flag: `${import.meta.env.BASE_URL}flags/cn.png` },
 ] as const
@@ -89,7 +89,7 @@ export default function Navbar() {
               <img
                 src={currentLang.flag}
                 alt={currentLang.label}
-                className='h-4 w-5 rounded-[2px] object-cover'
+                className='h-4 w-5 rounded-xs object-cover'
                 loading='lazy'
                 draggable='false'
               />
@@ -117,7 +117,7 @@ export default function Navbar() {
                     <img
                       src={item.flag}
                       alt={item.label}
-                      className='h-4 w-5 rounded-[2px] object-cover'
+                      className='h-4 w-5 rounded-xs object-cover'
                       loading='lazy'
                       draggable='false'
                     />
@@ -171,7 +171,7 @@ export default function Navbar() {
                     <img
                       src={item.flag}
                       alt={item.label}
-                      className='h-4 w-5 rounded-[2px] object-cover'
+                      className='h-4 w-5 rounded-xs object-cover'
                       loading='lazy'
                       draggable='false'
                     />
