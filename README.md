@@ -104,6 +104,7 @@ git clone https://github.com/K1mone/Pr-architech.git
 cd project
 npm install
 npm run dev
+```
 
 📸 Screenshots
 
