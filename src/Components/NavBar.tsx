@@ -3,9 +3,9 @@ import { Menu, X, ChevronDown } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext'
 
 const languages = [
-  { code: 'en', label: 'English', flag: '🇬🇧' },
-  { code: 'ru', label: 'Русский', flag: '🇷🇺' },
-  { code: 'zh', label: '中文', flag: '🇨🇳' },
+  { code: 'en', label: 'English', flag: `${import.meta.env.BASE_URL}flags/gb.png` },
+  { code: 'ru', label: 'Русский', flag: `${import.meta.env.BASE_URL}flags/ru.png` },
+  { code: 'zh', label: '中文', flag: `${import.meta.env.BASE_URL}flags/cn.png` },
 ] as const
 
 export default function Navbar() {
@@ -86,7 +86,13 @@ export default function Navbar() {
               onClick={() => setLangOpen((prev) => !prev)}
               className='flex items-center gap-2 rounded-lg border border-white/10 bg-slate-900 px-3 py-2 text-sm font-semibold text-slate-300 transition hover:bg-slate-800 hover:text-white'
             >
-              <span>{currentLang.flag}</span>
+              <img
+                src={currentLang.flag}
+                alt={currentLang.label}
+                className='h-4 w-5 rounded-[2px] object-cover'
+                loading='lazy'
+                draggable='false'
+              />
               <span>{currentLang.code.toUpperCase()}</span>
               <ChevronDown
                 size={16}
@@ -108,7 +114,13 @@ export default function Navbar() {
                       lang === item.code ? 'text-blue-400' : 'text-slate-300'
                     }`}
                   >
-                    <span>{item.flag}</span>
+                    <img
+                      src={item.flag}
+                      alt={item.label}
+                      className='h-4 w-5 rounded-[2px] object-cover'
+                      loading='lazy'
+                      draggable='false'
+                    />
                     <span>{item.label}</span>
                   </button>
                 ))}
@@ -150,13 +162,20 @@ export default function Navbar() {
                     key={item.code}
                     type='button'
                     onClick={() => setLang(item.code)}
-                    className={`rounded-lg border px-3 py-2 text-sm transition ${
+                    className={`flex items-center gap-2 rounded-lg border px-3 py-2 text-sm transition ${
                       lang === item.code
                         ? 'border-blue-500 bg-blue-500/10 text-blue-400'
                         : 'border-white/10 bg-slate-900 text-slate-300 hover:bg-slate-800'
                     }`}
                   >
-                    {item.flag} {item.code.toUpperCase()}
+                    <img
+                      src={item.flag}
+                      alt={item.label}
+                      className='h-4 w-5 rounded-[2px] object-cover'
+                      loading='lazy'
+                      draggable='false'
+                    />
+                    <span>{item.code.toUpperCase()}</span>
                   </button>
                 ))}
               </div>
